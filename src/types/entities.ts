@@ -44,7 +44,7 @@ export interface Offer {
   bedrooms: number;
   guests: number;
   price: number;
-  goods: Amenity[];
+  amenities: Amenity[];
   host: User;
   commentCount: number;
   location: Location;
