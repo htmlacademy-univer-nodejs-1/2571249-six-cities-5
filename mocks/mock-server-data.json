@@ -1,0 +1,179 @@
+{
+  "offers": [
+    {
+      "title": "offer1",
+      "description": "desc1",
+      "publicationDate": "2024-01-15T10:00:00.000Z",
+      "city": "Paris",
+      "preview": "https://example.com/preview1.jpg",
+      "images": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg",
+        "https://example.com/img3.jpg",
+        "https://example.com/img4.jpg",
+        "https://example.com/img5.jpg",
+        "https://example.com/img6.jpg"
+      ],
+      "isPremium": true,
+      "isFavorite": false,
+      "rating": 4.5,
+      "type": "apartment",
+      "bedrooms": 2,
+      "guests": 4,
+      "price": 15000,
+      "amenities": ["Breakfast", "Air conditioning", "Washer"],
+      "host": {
+        "name": "Host1",
+        "email": "test1@test.com",
+        "avatar": "https://example.com/avatar1.jpg",
+        "password": "password1",
+        "isPro": true
+      },
+      "commentCount": 0,
+      "location": {
+        "latitude": 48.85661,
+        "longitude": 2.351499
+      }
+    },
+    {
+      "title": "offer2",
+      "description": "desc2",
+      "publicationDate": "2024-01-20T14:30:00.000Z",
+      "city": "Amsterdam",
+      "preview": "https://example.com/preview2.jpg",
+      "images": [
+        "https://example.com/room1.jpg",
+        "https://example.com/room2.jpg",
+        "https://example.com/room3.jpg",
+        "https://example.com/room4.jpg",
+        "https://example.com/room5.jpg",
+        "https://example.com/room6.jpg"
+      ],
+      "isPremium": false,
+      "isFavorite": true,
+      "rating": 4.2,
+      "type": "room",
+      "bedrooms": 1,
+      "guests": 2,
+      "price": 8500,
+      "amenities": ["Laptop friendly workspace", "Towels"],
+      "host": {
+        "name": "Host2",
+        "email": "test2@test.com",
+        "avatar": "",
+        "password": "password2",
+        "isPro": false
+      },
+      "commentCount": 0,
+      "location": {
+        "latitude": 52.370216,
+        "longitude": 4.895168
+      }
+    },
+    {
+      "title": "offer3",
+      "description": "desc3",
+      "publicationDate": "2024-02-01T09:15:00.000Z",
+      "city": "Cologne",
+      "preview": "https://example.com/preview3.jpg",
+      "images": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg",
+        "https://example.com/img3.jpg",
+        "https://example.com/img4.jpg",
+        "https://example.com/img5.jpg",
+        "https://example.com/img6.jpg"
+      ],
+      "isPremium": true,
+      "isFavorite": false,
+      "rating": 4.8,
+      "type": "house",
+      "bedrooms": 4,
+      "guests": 6,
+      "price": 25000,
+      "amenities": ["Breakfast", "Washer", "Fridge"],
+      "host": {
+        "name": "Host3",
+        "email": "test3@test.com",
+        "avatar": "https://example.com/avatar3.jpg",
+        "password": "password3",
+        "isPro": true
+      },
+      "commentCount": 0,
+      "location": {
+        "latitude": 50.938361,
+        "longitude": 6.959974
+      }
+    },
+    {
+      "title": "offer4",
+      "description": "desc4",
+      "publicationDate": "2024-02-10T11:00:00.000Z",
+      "city": "Brussels",
+      "preview": "https://example.com/preview4.jpg",
+      "images": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg",
+        "https://example.com/img3.jpg",
+        "https://example.com/img4.jpg",
+        "https://example.com/img5.jpg",
+        "https://example.com/img6.jpg"
+      ],
+      "isPremium": false,
+      "isFavorite": false,
+      "rating": 3.9,
+      "type": "hotel",
+      "bedrooms": 1,
+      "guests": 2,
+      "price": 5000,
+      "amenities": ["Breakfast", "Towels"],
+      "host": {
+        "name": "Host4",
+        "email": "test4@test.com",
+        "avatar": "https://example.com/avatar4.jpg",
+        "password": "password4",
+        "isPro": false
+      },
+      "commentCount": 0,
+      "location": {
+        "latitude": 50.846557,
+        "longitude": 4.351697
+      }
+    },
+    {
+      "title": "offer5",
+      "description": "desc5",
+      "publicationDate": "2024-02-15T16:45:00.000Z",
+      "city": "Hamburg",
+      "preview": "https://example.com/preview5.jpg",
+      "images": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg",
+        "https://example.com/img3.jpg",
+        "https://example.com/img4.jpg",
+        "https://example.com/img5.jpg",
+        "https://example.com/img6.jpg"
+      ],
+      "isPremium": true,
+      "isFavorite": true,
+      "rating": 4.7,
+      "type": "apartment",
+      "bedrooms": 3,
+      "guests": 5,
+      "price": 18000,
+      "amenities": ["Air conditioning", "Washer", "Fridge"],
+      "host": {
+        "name": "Host5",
+        "email": "test5@test.com",
+        "avatar": "https://example.com/avatar5.jpg",
+        "password": "password5",
+        "isPro": true
+      },
+      "commentCount": 0,
+      "location": {
+        "latitude": 53.550341,
+        "longitude": 10.000654
+      }
+    }
+  ]
+}

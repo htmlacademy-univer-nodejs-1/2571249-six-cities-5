@@ -33,7 +33,7 @@ export interface User {
 export interface Offer {
   title: string;
   description: string;
-  publicationDate: Date;
+  publicationDate: string;
   city: City;
   preview: string;
   images: string[];
@@ -52,7 +52,7 @@ export interface Offer {
 
 export interface Comment {
   text: string;
-  publicationDate: Date;
+  publicationDate: string;
   rating: number;
   author: User;
 }
