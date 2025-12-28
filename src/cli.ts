@@ -2,6 +2,9 @@
 
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
+
+import chalk from "chalk";
+
 import type {
   Offer,
   User,
@@ -108,40 +111,75 @@ function parseTSV(content: string): Offer[] {
   return offers;
 }
 
+function printOffer(offer: Offer): void {
+  console.log(chalk.cyan.bold("\nOffer:"));
+  console.log(`  ${chalk.yellow("title:")} ${offer.title}`);
+  console.log(`  ${chalk.yellow("description:")} ${offer.description}`);
+  console.log(
+    `  ${chalk.yellow("publicationDate:")} ${offer.publicationDate.toISOString()}`
+  );
+  console.log(`  ${chalk.yellow("city:")} ${chalk.magenta(offer.city)}`);
+  console.log(`  ${chalk.yellow("preview:")} ${offer.preview}`);
+  console.log(`  ${chalk.yellow("images:")} ${JSON.stringify(offer.images)}`);
+  console.log(
+    `  ${chalk.yellow("isPremium:")} ${
+      offer.isPremium ? chalk.green("true") : chalk.red("false")
+    }`
+  );
+  console.log(
+    `  ${chalk.yellow("isFavorite:")} ${
+      offer.isFavorite ? chalk.green("true") : chalk.red("false")
+    }`
+  );
+  console.log(`  ${chalk.yellow("rating:")} ${chalk.cyan(String(offer.rating))}`);
+  console.log(`  ${chalk.yellow("type:")} ${chalk.magenta(offer.type)}`);
+  console.log(`  ${chalk.yellow("bedrooms:")} ${chalk.cyan(offer.bedrooms)}`);
+  console.log(`  ${chalk.yellow("guests:")} ${chalk.cyan(offer.guests)}`);
+  console.log(
+    `  ${chalk.yellow("price:")} ${chalk.cyan(String(offer.price))}`
+  );
+  console.log(
+    `  ${chalk.yellow("amenities:")} ${JSON.stringify(offer.amenities)}`
+  );
+  console.log(`  ${chalk.yellow("host:")}`);
+  console.log(`    ${chalk.yellow("name:")} ${offer.host.name}`);
+  console.log(
+    `    ${chalk.yellow("email:")} ${offer.host.email}`
+  );
+  console.log(
+    `    ${chalk.yellow("avatar:")} ${
+      offer.host.avatar ? offer.host.avatar : "undefined"
+    }`
+  );
+  console.log(`    ${chalk.yellow("password:")} ${offer.host.password}`);
+  console.log(
+    `    ${chalk.yellow("isPro:")} ${
+      offer.host.isPro ? chalk.green("true") : chalk.red("false")
+    }`
+  );
+  console.log(`  ${chalk.yellow("commentCount:")} ${chalk.cyan(offer.commentCount)}`);
+  console.log(`  ${chalk.yellow("location:")}`);
+  console.log(`    ${chalk.yellow("latitude:")} ${chalk.cyan(offer.location.latitude)}`);
+  console.log(
+    `    ${chalk.yellow("longitude:")} ${chalk.cyan(offer.location.longitude)}`
+  );
+}
+
 function importData(filePath: string): void {
   const fullPath = resolve(process.cwd(), filePath);
   const content = readFileSync(fullPath, "utf-8");
   const offers = parseTSV(content);
 
-  console.log(`Успешно импортировано ${offers.length} предложений.`);
+  console.log(
+    chalk.green(
+      `Успешно импортировано ${chalk.bold(
+        String(offers.length)
+      )} предложений.\n`
+    )
+  );
 
   for (const offer of offers) {
-    console.log(`
-title: ${offer.title}
-description: ${offer.description}
-publicationDate: ${offer.publicationDate.toISOString()}
-city: ${offer.city}
-preview: ${offer.preview}
-images: ${JSON.stringify(offer.images)}
-isPremium: ${offer.isPremium}
-isFavorite: ${offer.isFavorite}
-rating: ${offer.rating}
-type: ${offer.type}
-bedrooms: ${offer.bedrooms}
-guests: ${offer.guests}
-price: ${offer.price}
-amenities: ${JSON.stringify(offer.amenities)}
-host:
-  name: ${offer.host.name}
-  email: ${offer.host.email}
-  avatar: ${offer.host.avatar ?? "undefined"}
-  password: ${offer.host.password}
-  isPro: ${offer.host.isPro}
-commentCount: ${offer.commentCount}
-location:
-  latitude: ${offer.location.latitude}
-  longitude: ${offer.location.longitude}
-`);
+    printOffer(offer);
   }
 }
 
@@ -158,15 +196,17 @@ function main(): void {
       break;
     case "--import":
       if (args.length < 2) {
-        console.error("Ошибка: не указан путь к файлу для импорта");
+        console.error(chalk.red("Ошибка: не указан путь к файлу для импорта"));
         process.exitCode = 1;
         break;
       }
       importData(args[1]);
       break;
     default:
-      console.error(`Неизвестная команда: ${command}`);
-      console.error("Используйте --help для просмотра доступных команд.");
+      console.error(chalk.red(`Неизвестная команда: ${chalk.yellow(command)}`));
+      console.error(
+        "Используйте --help для просмотра доступных команд."
+      );
       process.exitCode = 1;
       break;
   }
