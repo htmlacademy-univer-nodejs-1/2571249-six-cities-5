@@ -9,30 +9,25 @@ import { createInterface } from "node:readline";
 
 import { printOffer } from "./utils/print.js";
 
-import type { Offer, City, HousingType, Amenity } from "./types/entities.js";
+import type { Offer } from "./types/entities.js";
+import { City, HousingType, Amenity } from "./types/entities.js";
 import {
   getRandomInt,
   getRandomElement,
   getRandomElements,
   getRandomBool,
 } from "./utils/random.js";
-import {
-  CITY_LOCATIONS,
-  CITIES,
-  HOUSING_TYPES,
-  AMENITIES,
-  TSV_HEADERS,
-} from "./utils/constants.js";
+import { CITY_LOCATIONS, TSV_HEADERS } from "./utils/constants.js";
 
 function showHelp(): void {
   console.log(
     "Программа для подготовки данных для REST API сервера.\n\n" +
-      "Пример: cli.js --<command> [--arguments]\n\n" +
-      "Команды:\n\n" +
-      " --version:                   # выводит номер версии\n" +
-      " --help:                      # печатает этот текст\n" +
-      " --import <path>:             # импортирует данные из TSV\n" +
-      " --generate <n> <path> <url>  # генерирует произвольное количество тестовых данных"
+    "Пример: cli.js --<command> [--arguments]\n\n" +
+    "Команды:\n\n" +
+    " --version:                   # выводит номер версии\n" +
+    " --help:                      # печатает этот текст\n" +
+    " --import <path>:             # импортирует данные из TSV\n" +
+    " --generate <n> <path> <url>  # генерирует произвольное количество тестовых данных"
   );
 }
 
@@ -196,12 +191,12 @@ async function generateData(
 
   for (let i = 1; i <= count; i++) {
     const baseOffer = getRandomElement(serverOffers);
-    const city = getRandomElement(CITIES);
-    const housingType = getRandomElement(HOUSING_TYPES);
+    const city = getRandomElement(Object.values(City));
+    const housingType = getRandomElement(Object.values(HousingType));
     const location = CITY_LOCATIONS[city];
     const amenities = getRandomElements(
-      AMENITIES,
-      getRandomInt(1, AMENITIES.length)
+      Object.values(Amenity),
+      getRandomInt(1, Object.values(Amenity).length)
     );
 
     const generatedOffer: Offer = {
