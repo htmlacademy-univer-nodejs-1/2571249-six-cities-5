@@ -16,6 +16,9 @@ export class UserEntity implements User {
 
   @prop({ required: true })
   public isPro!: boolean;
+
+  @prop({ required: false, type: [String], default: [] })
+  public favorites?: string[];
 }
 
 export const UserModel = getModelForClass(UserEntity, {
