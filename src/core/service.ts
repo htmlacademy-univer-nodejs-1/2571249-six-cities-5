@@ -6,5 +6,10 @@ export enum Service {
   UserService = "UserService",
   OfferService = "OfferService",
   CommentService = "CommentService",
+  UserController = "UserController",
+  OfferController = "OfferController",
+  UserRoute = "UserRoute",
+  OfferRoute = "OfferRoute",
+  ExceptionFilter = "ExceptionFilter",
 }
 

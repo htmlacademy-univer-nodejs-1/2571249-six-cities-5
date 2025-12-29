@@ -1,5 +1,5 @@
 import { prop, getModelForClass } from "@typegoose/typegoose";
-import type { User } from "../types/entities.js";
+import type { User } from "../../types/user.js";
 
 export class UserEntity implements User {
   @prop({ required: true })

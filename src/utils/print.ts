@@ -1,6 +1,6 @@
 import chalk from "chalk";
 
-import type { Offer } from "../types/entities.js";
+import type { Offer } from "../types/offer.js";
 
 export function printOffer(offer: Offer): void {
   console.log(chalk.cyan.bold("\nOffer:"));

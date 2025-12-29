@@ -3,7 +3,7 @@ import type { DocumentType } from "@typegoose/typegoose";
 import type { CreateOfferDto } from "../dto/create-offer.dto.js";
 import type { UpdateOfferDto } from "../dto/update-offer.dto.js";
 import type { OfferEntity } from "../models/offer.entity.js";
-import type { City } from "../types/entities.js";
+import type { City } from "../../types/enums.js";
 
 import type { BaseService } from "./base-service.interface.js";
 

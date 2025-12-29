@@ -1,6 +1,6 @@
 import { prop, getModelForClass, type Ref } from "@typegoose/typegoose";
-import type { Location } from "../types/entities.js";
-import { City, HousingType, Amenity } from "../types/entities.js";
+import type { Location } from "../../types/location.js";
+import { City, HousingType, Amenity } from "../../types/enums.js";
 import { UserEntity } from "./user.entity.js";
 
 class LocationEntity implements Location {

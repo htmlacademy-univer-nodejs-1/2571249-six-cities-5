@@ -7,7 +7,7 @@ import type { UpdateOfferDto } from "../dto/update-offer.dto.js";
 import { CommentModel } from "../models/comment.entity.js";
 import { OfferModel, type OfferEntity } from "../models/offer.entity.js";
 import { UserModel } from "../models/user.entity.js";
-import type { City } from "../types/entities.js";
+import type { City } from "../../types/enums.js";
 
 import type { IOfferService } from "./offer-service.interface.js";
 
