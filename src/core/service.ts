@@ -5,5 +5,6 @@ export enum Service {
   DatabaseClient = "DatabaseClient",
   UserService = "UserService",
   OfferService = "OfferService",
+  CommentService = "CommentService",
 }
 

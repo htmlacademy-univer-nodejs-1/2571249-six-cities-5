@@ -65,24 +65,21 @@ async function saveOffer(
   await offerService.create({
     title: offer.title,
     description: offer.description,
-    publicationDate: new Date(offer.publicationDate),
     city: offer.city,
     preview: offer.preview,
     images: offer.images,
     isPremium: offer.isPremium,
-    isFavorite: offer.isFavorite,
     rating: offer.rating,
     type: offer.type,
     bedrooms: offer.bedrooms,
     guests: offer.guests,
     price: offer.price,
     amenities: offer.amenities,
-    host: user._id,
-    commentCount: offer.commentCount,
     location: {
       latitude: offer.location.latitude,
       longitude: offer.location.longitude,
     },
+    host: user._id.toString(),
   });
 }
 
