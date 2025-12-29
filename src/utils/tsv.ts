@@ -1,5 +1,5 @@
-import type { Offer } from "../types/entities.js";
-import { City, HousingType, Amenity } from "../types/entities.js";
+import type { Offer } from "../types/offer.js";
+import { City, HousingType, Amenity } from "../types/enums.js";
 import { TSV_HEADERS } from "./constants.js";
 
 export function parseTSVLine(line: string): string[] {

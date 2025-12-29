@@ -10,3 +10,4 @@ const container = createContainer();
 const application = container.get<Application>(Service.Application);
 
 application.init();
+application.start();

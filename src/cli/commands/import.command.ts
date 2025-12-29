@@ -7,12 +7,12 @@ import type { DocumentType } from "@typegoose/typegoose";
 
 import { createContainer } from "../../core/container.js";
 import { Service } from "../../core/service.js";
-import type { DatabaseClient } from "../../core/database/database.js";
+import type { DatabaseClient } from "../../database/database.js";
 
-import type { UserEntity } from "../../models/user.entity.js";
-import type { Offer } from "../../types/entities.js";
-import type { IUserService } from "../../services/user-service.interface.js";
-import type { IOfferService } from "../../services/offer-service.interface.js";
+import type { UserEntity } from "../../database/models/user.entity.js";
+import type { Offer } from "../../types/offer.js";
+import type { IUserService } from "../../database/services/user-service.interface.js";
+import type { IOfferService } from "../../database/services/offer-service.interface.js";
 
 import { parseTSVLine, parseTSVRow } from "../../utils/tsv.js";
 

@@ -5,8 +5,8 @@ import type { WriteStream } from "node:fs";
 import axios from "axios";
 import chalk from "chalk";
 
-import type { Offer } from "../../types/entities.js";
-import { City, HousingType, Amenity } from "../../types/entities.js";
+import type { Offer } from "../../types/offer.js";
+import { City, HousingType, Amenity } from "../../types/enums.js";
 
 import { CITY_LOCATIONS } from "../../utils/constants.js";
 import {

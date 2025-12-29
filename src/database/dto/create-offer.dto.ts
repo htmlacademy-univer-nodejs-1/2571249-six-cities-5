@@ -1,4 +1,5 @@
-import type { City, HousingType, Amenity, Location } from "../types/entities.js";
+import type { City, HousingType, Amenity } from "../../types/enums.js";
+import type { Location } from "../../types/location.js";
 
 export interface CreateOfferDto {
   title: string;

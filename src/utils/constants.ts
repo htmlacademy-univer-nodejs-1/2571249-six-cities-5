@@ -1,4 +1,5 @@
-import { City, type Location } from "../types/entities.js";
+import { City } from "../types/enums.js";
+import type { Location } from "../types/location.js";
 
 export const CITY_LOCATIONS: Record<City, Location> = {
   [City.Paris]: { latitude: 48.85661, longitude: 2.351499 },

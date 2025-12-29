@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 import { inject, injectable } from "inversify";
 
-import { Service } from "../service.js";
-import type { ILogger } from "../logger/logger.interface.js";
-import type { IConfig } from "../config/config.interface.js";
+import { Service } from "../core/service.js";
+import type { ILogger } from "../core/logger/logger.interface.js";
+import type { IConfig } from "../core/config/config.interface.js";
 
 @injectable()
 export class DatabaseClient {
